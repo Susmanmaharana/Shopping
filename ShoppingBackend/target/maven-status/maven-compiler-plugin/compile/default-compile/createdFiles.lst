@@ -1,0 +1,12 @@
+com\susman\daoimpl\CategoryDaoImpl.class
+com\susman\dto\Cart.class
+com\susman\dao\CategoryDao.class
+com\susman\dto\Product.class
+com\susman\dto\User.class
+com\susman\dto\Category.class
+com\susman\dto\Address.class
+com\susman\daoimpl\UserDaoImpl.class
+com\susman\config\HibernateConfig.class
+com\susman\dao\UserDao.class
+com\susman\dao\ProductDao.class
+com\susman\daoimpl\ProductDaoImpl.class
