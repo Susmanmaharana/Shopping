@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 	<bean id="c3P0ds" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="user" value="system" />
+		<property name="password" value="manager" />
+		<property name="initialPoolSize" value="20" />
+		<property name="maxPoolSize" value="40" />
+	</bean>
+
+	<bean id="sesfact"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="c3P0ds" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.fa.domain.Product</value>
+				<value>com.fa.domain.FabricationAssociation</value>
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="template" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sesfact" />
+	</bean> -->
+	<bean id="jofb" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="JndiName" value="java:/comp/env/DsJndi" />
+	</bean>
+	<!-- If request parameter "targetUrl" is existed, then forward to this url -->
+	<!-- For update login form -->
+	<bean id="savedRequestAwareAuthenticationSuccessHandler"
+		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<property name="targetUrlParameter" value="targetUrl" />
+	</bean>
+</beans>
